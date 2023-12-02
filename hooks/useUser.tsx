@@ -30,5 +30,6 @@ export const MyUserContextProvider = (props:Props) =>{
     const [isLoadingData,setLoadingData] = useState(false)
     const [useDetails,setUserDetails] = useState<UserDetails|null>(null)
     const [subscription,setSubscription] = useState<Subscription|null>(null)
-    // const get
+    const getUserDetails = () => supabase.from('users').select('*').single()
+    const getSubscription = () => supabase.from('subscriptions').select('*,prices(*,products(*))').in('status',['trailing','active']).single()
 }

@@ -39,7 +39,6 @@ export const MyUserContextProvider = (props:Props) =>{
             Promise.allSettled([getUserDetails(),getSubscription()]).then((result)=>{
                 const userDetailsPromise = result[0]
                 const subscriptionPromise = result[1]
-
                 if(userDetailsPromise.status==='fulfilled') setUserDetails(userDetailsPromise.value.data as UserDetails)
                 if(subscriptionPromise.status==='fulfilled') setSubscription(subscriptionPromise.value.data as Subscription)
                 setLoadingData(false)

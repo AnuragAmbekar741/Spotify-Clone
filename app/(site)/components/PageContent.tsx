@@ -2,7 +2,6 @@
 import {Song} from'@/types'
 import SongItem from '@/components/SongItem'
 
-
 interface PageContentProps{
     songs:Song[]
 

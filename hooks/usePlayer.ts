@@ -16,4 +16,4 @@ const usePlayer = create<PlayerStore>((set) => ({
   reset: () => set({ ids: [], activeId: undefined })
 }));
 
-export default usePlayer;
+export default usePlayer; 

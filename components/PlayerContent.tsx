@@ -1,6 +1,6 @@
 "use client";
 
-// import useSound from "use-sound";
+import useSound from 'use-sound'
 import { useEffect, useState } from "react";
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 import { HiSpeakerWave, HiSpeakerXMark } from "react-icons/hi2";
@@ -60,35 +60,35 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
     player.setId(previousSong);
   }
 
-//   const [play, { pause, sound }] = useSound(
-//     songUrl,
-//     { 
-//       volume: volume,
-//       onplay: () => setIsPlaying(true),
-//       onend: () => {
-//         setIsPlaying(false);
-//         onPlayNext();
-//       },
-//       onpause: () => setIsPlaying(false),
-//       format: ['mp3']
-//     }
-//   );
+  const [play, { pause, sound }] = useSound(
+    songUrl,
+    { 
+      volume: volume,
+      onplay: () => setIsPlaying(true),
+      onend: () => {
+        setIsPlaying(false);
+        onPlayNext();
+      },
+      onpause: () => setIsPlaying(false),
+      format: ['mp3']
+    }
+  );
 
-//   useEffect(() => {
-//     sound?.play();
+  useEffect(() => {
+    sound?.play();
     
-//     return () => {
-//       sound?.unload();
-//     }
-//   }, [sound]);
+    return () => {
+      sound?.unload();
+    }
+  }, [sound]);
 
-//   const handlePlay = () => {
-//     if (!isPlaying) {
-//       play();
-//     } else {
-//       pause();
-//     }
-//   }
+  const handlePlay = () => {
+    if (!isPlaying) {
+      play();
+    } else {
+      pause();
+    }
+  }
 
   const toggleMute = () => {
     if (volume === 0) {
@@ -193,8 +193,8 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
               size={34} 
             />
             <Slider 
-            //   value={volume} 
-            //   onChange={(value) => setVolume(value)}
+              value={volume} 
+              onChange={(value) => setVolume(value)}
             />
           </div>
         </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import useSound from 'use-sound'
+import useSound from "use-sound";
 import { useEffect, useState } from "react";
 import { BsPauseFill, BsPlayFill } from "react-icons/bs";
 import { HiSpeakerWave, HiSpeakerXMark } from "react-icons/hi2";
@@ -118,7 +118,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
           "
         >
           <div 
-            onClick={()=>{}} 
+            onClick={handlePlay} 
             className="
               h-10
               w-10
@@ -148,7 +148,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
           "
         >
           <AiFillStepBackward
-            onClick={()=>{}}
+            onClick={onPlayPrevious}
             size={30} 
             className="
               text-neutral-400 
@@ -158,7 +158,7 @@ const PlayerContent: React.FC<PlayerContentProps> = ({
             "
           />
           <div 
-            onClick={()=>{}} 
+            onClick={handlePlay} 
             className="
               flex 
               items-center 
